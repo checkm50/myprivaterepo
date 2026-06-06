@@ -78,7 +78,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
                     ResultSet results = stmt.executeQuery(
                             "SELECT u.*, a.name as authority " +
                                     "FROM users u, authorities a INNER JOIN user_authorities ua on a.id = ua.authority_id " +
-                                    "WHERE u.id = ua.user_id AND u.username LIKE '" + username + "'");
+                                    "WHERE u.id = ua.user_id AND u.username LIKE '" + username1 + "'");
                     if (results.next()) {
                         log.debug("Found matching user in database for: " + username);
                         results.beforeFirst();
