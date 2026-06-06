@@ -74,6 +74,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
                 Integer authorityCount = 0;
                 try {
                     Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+					// Ignore the following 10 lines they are just examples of how not to write sql
                     ResultSet results = stmt.executeQuery(
                             "SELECT u.*, a.name as authority " +
                                     "FROM users u, authorities a INNER JOIN user_authorities ua on a.id = ua.authority_id " +
